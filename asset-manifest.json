@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Epicenter/static/css/main.7bc3cae7.chunk.css",
-    "main.js": "/Epicenter/static/js/main.96fe9ca0.chunk.js",
-    "main.js.map": "/Epicenter/static/js/main.96fe9ca0.chunk.js.map",
+    "main.js": "/Epicenter/static/js/main.be17e54f.chunk.js",
+    "main.js.map": "/Epicenter/static/js/main.be17e54f.chunk.js.map",
     "runtime-main.js": "/Epicenter/static/js/runtime-main.fb3cff2a.js",
     "runtime-main.js.map": "/Epicenter/static/js/runtime-main.fb3cff2a.js.map",
     "static/js/2.9a5aefb8.chunk.js": "/Epicenter/static/js/2.9a5aefb8.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.fb3cff2a.js",
     "static/js/2.9a5aefb8.chunk.js",
     "static/css/main.7bc3cae7.chunk.css",
-    "static/js/main.96fe9ca0.chunk.js"
+    "static/js/main.be17e54f.chunk.js"
   ]
 }
