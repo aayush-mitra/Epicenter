@@ -14,7 +14,7 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server, {
   cors: {
-    origin: "http://138.68.12.208",
+    origin: "http://localhost:3000",
     methods: ["GET", "POST"]
   }
 });
@@ -47,10 +47,24 @@ io.on("connection", (socket) => {
 
     socket.on('conversation-created', () => {
         socket.broadcast.emit("refresh-convo");
+        console.log('yo');
     })
 
-    socket.on('message-sent', (roomId) => {
-        io.in(roomId).emit('refresh-convo')
+    socket.on('message-sent', (roomId, messageData) => {
+
+        const msg = {
+            author: messageData.author,
+            date: Date.now(),
+            text: messageData.text
+        };
+    
+        Conversation.findOne({_id: roomId}, (err, convo) => {
+            convo.messages.push(msg);
+            convo.save();
+            console.log(convo.messages.length);
+            io.in(roomId).emit('refresh-after-msg', convo)
+        });
+        
     })
 });
 
